@@ -1,0 +1,3 @@
+verilog work "module_FSM_Sema_CL.v"
+verilog work "CLKDiv.v"
+verilog work "FSM_SEMA_MAIN.v"

@@ -1,0 +1,137 @@
+
+----------------------------------------
+|  P a r t i t i o n    S u c c e e d  |
+----------------------------------------
+0 Group(s)
+
+GCLK2: 1=clk.p
+----------------- B l o c k 0 ------------------
+PLApt(37/56), Fanin(19/38), Clk(1/3), Bct(1/4), Pin(2/6), Mcell(16/16)
+PLApts[37/50] 28 31 29 5 2 10 24 33 68 71 43 15 17 41 19 21 52 70 4 67 8 13 39 14 6 49 23 27 37 34 69 12 30 
+              36 () () () () () () () () () 67 () () 47 () () 45
+Fanins[19] Clk_m_s.n Clock_m_s/counter<0>.n Clock_m_s/counter<1>.n Clock_m_s/counter<2>.n 
+           Clock_m_s/counter<3>.n Clock_m_s/counter<4>.n Clock_m_s/counter<5>.n Clock_m_s/counter<6>.n 
+           Clock_m_s/counter<7>.n Clock_m_s/counter<8>.n N_PZ_142.n cst<0>.n cst<1>.n cst<2>.n cst<3>.n p.p 
+           reset.p s.p w.p
+clk[1] clk 
+CTC: (pt=2) Clk_m_s ;
+CTR: 
+CTS: 
+CTE: 
+vref: [0]
+Signal[16] [s_gyr<2>(148),s_gyr<2>(142)] [s_gyr<1>(156),s_gyr<1>(139)] [cst<1>(160)] [cst<2>(159)]  
+           [cst<3>(155)] [cst<0>(154)] [N_PZ_142(153)] [Clock_m_s/counter<0>(152)]  
+           [Clock_m_s/counter<1>(151)] [Clock_m_s/counter<2>(149)] [Clock_m_s/counter<3>(146)]  
+           [Clock_m_s/counter<4>(145)] [Clock_m_s/counter<5>(158)] [Clock_m_s/counter<6>(157)]  
+           [Clock_m_s/counter<7>(150)] [Clock_m_s/counter<9>(147)] 
+Signal[16] [ 0: Clock_m_s/counter<4>(145)  ][ 1: Clock_m_s/counter<3>(146)  ][ 2: Clock_m_s/counter<9>(147)  
+           (143)  ][ 3: s_gyr<2>(148) s_gyr<2>(142)  ][ 4: Clock_m_s/counter<2>(149)  ][ 5:  
+           Clock_m_s/counter<7>(150) (140)  ][ 6: Clock_m_s/counter<1>(151)  ][ 7: Clock_m_s/counter<0>(152)  
+            ][ 8: N_PZ_142(153)  ][ 9: cst<0>(154)  ][ 10: cst<3>(155)  ][ 11: s_gyr<1>(156) s_gyr<1>(139)  ] 
+           [ 12: Clock_m_s/counter<6>(157) (138)  ][ 13: Clock_m_s/counter<5>(158) (137)  ][ 14: cst<2>(159)  
+            ][ 15: cst<1>(160)  ]
+----------------- B l o c k 1 ------------------
+PLApt(29/56), Fanin(27/38), Clk(1/3), Bct(1/4), Pin(2/8), Mcell(16/16)
+PLApts[29/56] 3 9 16 7 67 20 32 54 59 61 62 63 64 38 40 42 44 46 48 50 51 65 () () () 66 () () 60 () () 58 () 
+              () 57 () () 56 () () 55 () () () () () () () () () () () () () () 53
+Fanins[27] Clock_m_s/counter<0>.n Clock_m_s/counter<10>.n Clock_m_s/counter<11>.n Clock_m_s/counter<12>.n 
+           Clock_m_s/counter<13>.n Clock_m_s/counter<14>.n Clock_m_s/counter<15>.n Clock_m_s/counter<16>.n 
+           Clock_m_s/counter<17>.n Clock_m_s/counter<18>.n Clock_m_s/counter<19>.n Clock_m_s/counter<1>.n 
+           Clock_m_s/counter<20>.n Clock_m_s/counter<21>.n Clock_m_s/counter<2>.n Clock_m_s/counter<3>.n 
+           Clock_m_s/counter<4>.n Clock_m_s/counter<5>.n Clock_m_s/counter<6>.n Clock_m_s/counter<7>.n 
+           Clock_m_s/counter<8>.n Clock_m_s/counter<9>.n N_PZ_142.n cst<0>.n cst<1>.n cst<2>.n cst<3>.n
+clk[1] clk 
+CTC: (pt=67) N_PZ_142 ;
+CTR: 
+CTS: 
+CTE: 
+vref: [0]
+Signal[16] [p_gr<0>(173),p_gr<0>(7)] [p_gr<1>(175),p_gr<1>(10)] [Clock_m_s/counter<10>(176)]  
+           [Clock_m_s/counter<12>(171)] [Clock_m_s/counter<13>(170)] [Clock_m_s/counter<14>(169)]  
+           [Clock_m_s/counter<15>(168)] [Clock_m_s/counter<17>(167)] [Clk_m_s(166)]  
+           [Clock_m_s/counter<11>(162)] [Clock_m_s/counter<16>(174)] [Clock_m_s/counter<18>(172)]  
+           [Clock_m_s/counter<19>(165)] [Clock_m_s/counter<20>(164)] [Clock_m_s/counter<21>(163)]  
+           [Clock_m_s/counter<8>(161)] 
+Signal[16] [ 0: Clock_m_s/counter<8>(161) (2)  ][ 1: Clock_m_s/counter<11>(162)  ][ 2:  
+           Clock_m_s/counter<21>(163) (3)  ][ 3: Clock_m_s/counter<20>(164) (4)  ][ 4:  
+           Clock_m_s/counter<19>(165) (5)  ][ 5: Clk_m_s(166)  ][ 6: Clock_m_s/counter<17>(167)  ][ 7:  
+           Clock_m_s/counter<15>(168)  ][ 8: Clock_m_s/counter<14>(169)  ][ 9: Clock_m_s/counter<13>(170)  ] 
+           [ 10: Clock_m_s/counter<12>(171)  ][ 11: Clock_m_s/counter<18>(172) (6)  ][ 12: p_gr<0>(173)  
+           p_gr<0>(7)  ][ 13: Clock_m_s/counter<16>(174) (9)  ][ 14: p_gr<1>(175) p_gr<1>(10)  ][ 15:  
+           Clock_m_s/counter<10>(176)  ]
+----------------- B l o c k 2 ------------------
+PLApt(3/56), Fanin(5/38), Clk(0/3), Bct(1/4), Pin(1/6), Mcell(1/16)
+PLApts[3/5] 25 26 () () 67
+Fanins[ 5] N_PZ_142.n cst<0>.n cst<1>.n cst<2>.n cst<3>.n
+clk[0] 
+CTC: (pt=67) N_PZ_142 ;
+CTR: 
+CTS: 
+CTE: 
+vref: [0]
+Signal[ 1] [s_gyr<0>(177),s_gyr<0>(136)] 
+Signal[ 1] [ 0: s_gyr<0>(177) s_gyr<0>(136)  ][ 1: (135)  ][ 2: (134)  ][ 3:  ][ 4: (133)  ][ 5:  ][ 6:  ] 
+           [ 7:  ][ 8:  ][ 9:  ][ 10:  ][ 11:  ][ 12:  ][ 13: (132)  ][ 14:  ][ 15: (131)  ]
+----------------- B l o c k 3 ------------------
+----------------- B l o c k 4 ------------------
+----------------- B l o c k 5 ------------------
+PLApt(0/56), Fanin(0/38), Clk(0/3), Bct(0/4), Pin(2/8), Mcell(0/16)
+PLApts[0/0]
+Fanins[ 0]
+clk[0] 
+CTC: 
+CTR: 
+CTS: 
+CTE: 
+vref: [0]
+Signal[ 2] [clk(38)] [w(39)] 
+Signal[ 2] [ 0: (34)  ][ 1: (35)  ][ 2:  ][ 3: clk(38)  ][ 4:  ][ 5:  ][ 6:  ][ 7:  ][ 8:  ][ 9:  ][ 10:  ] 
+           [ 11: w(39)  ][ 12: (40)  ][ 13: (41)  ][ 14: (42)  ][ 15: (43)  ]
+----------------- B l o c k 6 ------------------
+----------------- B l o c k 7 ------------------
+----------------- B l o c k 8 ------------------
+PLApt(5/56), Fanin(5/38), Clk(0/3), Bct(1/4), Pin(3/8), Mcell(3/16)
+PLApts[5/47] 11 18 22 () 67 () () () () () () () () () () () () () () () () () () () () () () () () () () () 
+             () () () () () () () () () () () () () () 35
+Fanins[ 5] N_PZ_142.n cst<0>.n cst<1>.n cst<2>.n cst<3>.n
+clk[0] 
+CTC: (pt=67) N_PZ_142 ;
+CTR: 
+CTS: 
+CTE: 
+vref: [0]
+Signal[ 3] [w_gyr<0>(278),w_gyr<0>(115)] [w_gyr<2>(287),w_gyr<2>(119)] [w_gyr<1>(285),w_gyr<1>(117)] 
+Signal[ 3] [ 0: (112)  ][ 1: (113)  ][ 2:  ][ 3: (114)  ][ 4:  ][ 5: w_gyr<0>(278) w_gyr<0>(115)  ][ 6:  ] 
+           [ 7:  ][ 8:  ][ 9:  ][ 10:  ][ 11: (116)  ][ 12: w_gyr<1>(285) w_gyr<1>(117)  ][ 13: (118)  ] 
+           [ 14: w_gyr<2>(287) w_gyr<2>(119)  ][ 15:  ]
+----------------- B l o c k 9 ------------------
+PLApt(0/56), Fanin(0/38), Clk(0/3), Bct(0/4), Pin(2/9), Mcell(0/16)
+PLApts[0/0]
+Fanins[ 0]
+clk[0] 
+CTC: 
+CTR: 
+CTS: 
+CTE: 
+vref: [0]
+Signal[ 2] [p(104)] [reset(102)] 
+Signal[ 2] [ 0: (111)  ][ 1: (110)  ][ 2: (107)  ][ 3: (106)  ][ 4: (105)  ][ 5: p(104)  ][ 6:  ][ 7:  ][ 8:  
+            ][ 9:  ][ 10:  ][ 11: (103)  ][ 12:  ][ 13: reset(102)  ][ 14:  ][ 15: (101)  ]
+----------------- B l o c k 10 ------------------
+PLApt(0/56), Fanin(0/38), Clk(0/3), Bct(0/4), Pin(1/8), Mcell(0/16)
+PLApts[0/0]
+Fanins[ 0]
+clk[0] 
+CTC: 
+CTR: 
+CTS: 
+CTE: 
+vref: [0]
+Signal[ 1] [s(124)] 
+Signal[ 1] [ 0:  ][ 1:  ][ 2:  ][ 3:  ][ 4: (120)  ][ 5: (121)  ][ 6:  ][ 7:  ][ 8:  ][ 9:  ][ 10: s(124)  ] 
+           [ 11: (125)  ][ 12: (126)  ][ 13: (128)  ][ 14: (129)  ][ 15: (130)  ]
+----------------- B l o c k 11 ------------------
+----------------- B l o c k 12 ------------------
+----------------- B l o c k 13 ------------------
+----------------- B l o c k 14 ------------------
+----------------- B l o c k 15 ------------------

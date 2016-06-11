@@ -1,0 +1,529 @@
+MDF Database:  version 1.0
+MDF_INFO | FSM_SEMA_MAIN | XC2C256-6-TQ144
+MACROCELL | 1 | 12 | p_gr<0>_MC
+ATTRIBUTES | 135004930 | 0
+INPUTS | 4 | cst<3>  | cst<1>  | cst<0>  | cst<2>
+INPUTMC | 4 | 0 | 10 | 0 | 15 | 0 | 9 | 0 | 14
+LCT | 1 | 2 | Internal_Name
+EQ | 4 | 
+   !p_gr<0>.D = cst<3> & !cst<1>
+	# cst<1> & !cst<0>
+	# !cst<3> & cst<0> & cst<2>;	// (3 pt, 4 inp)
+    p_gr<0>.LH = !(N_PZ_142);	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 0 | 10 | cst<3>_MC
+ATTRIBUTES | 2290090752 | 0
+OUTPUTMC | 13 | 0 | 8 | 0 | 14 | 0 | 9 | 0 | 15 | 0 | 10 | 1 | 12 | 1 | 14 | 2 | 0 | 0 | 11 | 0 | 3 | 8 | 5 | 8 | 12 | 8 | 14
+INPUTS | 7 | cst<3>  | reset  | cst<1>  | cst<0>  | cst<2>  | s  | w
+INPUTMC | 4 | 0 | 10 | 0 | 15 | 0 | 9 | 0 | 14
+INPUTP | 3 | 156 | 190 | 62
+LCT | 1 | 2 | Internal_Name
+EQ | 5 | 
+   cst<3> := cst<3> & !reset & !cst<1>
+	# cst<3> & !reset & !cst<0>
+	# !cst<3> & !reset & cst<1> & cst<2> & s
+	# !cst<3> & !reset & cst<1> & cst<2> & w;	// (4 pt, 7 inp)
+    cst<3>.CLK = Clk_m_s;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 0 | 15 | cst<1>_MC
+ATTRIBUTES | 2290090752 | 0
+OUTPUTMC | 13 | 0 | 8 | 0 | 14 | 0 | 9 | 0 | 15 | 0 | 10 | 1 | 12 | 1 | 14 | 2 | 0 | 0 | 11 | 0 | 3 | 8 | 5 | 8 | 12 | 8 | 14
+INPUTS | 7 | reset  | cst<1>  | N_PZ_142  | cst<0>  | cst<3>  | cst<2>  | s
+INPUTMC | 5 | 0 | 15 | 0 | 8 | 0 | 9 | 0 | 10 | 0 | 14
+INPUTP | 2 | 156 | 190
+LCT | 1 | 2 | Internal_Name
+EQ | 8 | 
+   cst<1> := !reset & cst<1> & N_PZ_142
+	# !reset & !cst<1> & cst<0>
+	# cst<3> & !reset & cst<1> & !cst<0>
+	# cst<3> & !reset & cst<0> & !cst<2>
+	# !reset & cst<1> & !cst<0> & !cst<2>
+	# !cst<3> & !reset & !cst<0> & !cst<2> & !s & 
+	!N_PZ_142;	// (6 pt, 7 inp)
+    cst<1>.CLK = Clk_m_s;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 0 | 9 | cst<0>_MC
+ATTRIBUTES | 2290090752 | 0
+OUTPUTMC | 13 | 0 | 8 | 0 | 14 | 0 | 9 | 0 | 15 | 0 | 10 | 1 | 12 | 1 | 14 | 2 | 0 | 0 | 11 | 0 | 3 | 8 | 5 | 8 | 12 | 8 | 14
+INPUTS | 8 | cst<3>  | reset  | cst<0>  | N_PZ_142  | cst<1>  | cst<2>  | p  | s
+INPUTMC | 5 | 0 | 10 | 0 | 9 | 0 | 8 | 0 | 15 | 0 | 14
+INPUTP | 3 | 156 | 160 | 190
+LCT | 1 | 2 | Internal_Name
+EQ | 7 | 
+   cst<0> := cst<3> & !reset & !cst<0>
+	# !reset & cst<0> & N_PZ_142
+	# cst<3> & !reset & cst<1> & !cst<2>
+	# !cst<3> & !reset & !cst<1> & cst<0>
+	# !reset & cst<1> & cst<0> & !cst<2> & p
+	# !reset & !cst<1> & !cst<0> & !cst<2> & s;	// (6 pt, 8 inp)
+    cst<0>.CLK = Clk_m_s;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 0 | 14 | cst<2>_MC
+ATTRIBUTES | 2290090752 | 0
+OUTPUTMC | 13 | 0 | 8 | 0 | 14 | 0 | 9 | 0 | 15 | 0 | 10 | 1 | 12 | 1 | 14 | 2 | 0 | 0 | 11 | 0 | 3 | 8 | 5 | 8 | 12 | 8 | 14
+INPUTS | 8 | cst<3>  | reset  | cst<0>  | cst<2>  | cst<1>  | s  | N_PZ_142  | w
+INPUTMC | 5 | 0 | 10 | 0 | 9 | 0 | 14 | 0 | 15 | 0 | 8
+INPUTP | 3 | 156 | 190 | 62
+LCT | 1 | 2 | Internal_Name
+EQ | 6 | 
+   cst<2> := cst<3> & !reset & !cst<0> & cst<2>
+	# !reset & !cst<1> & cst<0> & cst<2>
+	# !cst<3> & !reset & cst<1> & cst<2> & !s
+	# !cst<3> & !reset & cst<1> & !cst<2> & !N_PZ_142
+	# !cst<3> & !reset & cst<0> & cst<2> & w;	// (5 pt, 8 inp)
+    cst<2>.CLK = Clk_m_s;	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 0 | 8 | N_PZ_142_MC
+ATTRIBUTES | 536871680 | 0
+OUTPUTMC | 5 | 0 | 14 | 0 | 9 | 0 | 15 | 0 | 11 | 0 | 3
+INPUTS | 7 | cst<3>  | cst<1>  | cst<2>  | s  | w  | cst<0>  | p
+INPUTMC | 4 | 0 | 10 | 0 | 15 | 0 | 14 | 0 | 9
+INPUTP | 3 | 190 | 62 | 160
+EQ | 3 | 
+   N_PZ_142 = !cst<3> & cst<1> & cst<2> & !s & !w
+	# !cst<3> & cst<1> & cst<0> & !cst<2> & !s & !p
+	# !cst<3> & !cst<1> & !cst<0> & !cst<2> & !s & !p;	// (3 pt, 7 inp)
+
+MACROCELL | 1 | 5 | Clk_m_s_MC
+ATTRIBUTES | 2151711488 | 0
+INPUTS | 22 | Clock_m_s/counter<0>  | Clock_m_s/counter<10>  | Clock_m_s/counter<1>  | Clock_m_s/counter<2>  | Clock_m_s/counter<3>  | Clock_m_s/counter<4>  | Clock_m_s/counter<5>  | Clock_m_s/counter<6>  | Clock_m_s/counter<7>  | Clock_m_s/counter<8>  | Clock_m_s/counter<11>  | Clock_m_s/counter<9>  | Clock_m_s/counter<12>  | Clock_m_s/counter<13>  | Clock_m_s/counter<14>  | Clock_m_s/counter<15>  | Clock_m_s/counter<16>  | Clock_m_s/counter<17>  | Clock_m_s/counter<18>  | Clock_m_s/counter<19>  | Clock_m_s/counter<20>  | Clock_m_s/counter<21>
+INPUTMC | 22 | 0 | 7 | 1 | 15 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 13 | 0 | 12 | 0 | 5 | 1 | 0 | 1 | 1 | 0 | 2 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 7 | 1 | 13 | 1 | 6 | 1 | 11 | 1 | 4 | 1 | 3 | 1 | 2
+EQ | 9 | 
+   Clk_m_s.T := Clock_m_s/counter<0> & !Clock_m_s/counter<10> & 
+	Clock_m_s/counter<1> & Clock_m_s/counter<2> & Clock_m_s/counter<3> & 
+	Clock_m_s/counter<4> & Clock_m_s/counter<5> & Clock_m_s/counter<6> & 
+	Clock_m_s/counter<7> & !Clock_m_s/counter<8> & Clock_m_s/counter<11> & 
+	!Clock_m_s/counter<9> & !Clock_m_s/counter<12> & !Clock_m_s/counter<13> & 
+	!Clock_m_s/counter<14> & !Clock_m_s/counter<15> & Clock_m_s/counter<16> & 
+	!Clock_m_s/counter<17> & Clock_m_s/counter<18> & Clock_m_s/counter<19> & 
+	Clock_m_s/counter<20> & Clock_m_s/counter<21>;	// (1 pt, 22 inp)
+   Clk_m_s.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 0 | 7 | Clock_m_s/counter<0>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 22 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 13 | 0 | 12 | 0 | 5 | 0 | 2 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 7 | 1 | 6 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 13 | 1 | 1 | 1 | 0 | 1 | 15 | 1 | 5
+INPUTS | 0
+EQ | 2 | 
+   !Clock_m_s/counter<0>.T := Gnd;	// (0 pt, 0 inp)
+   Clock_m_s/counter<0>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 1 | 15 | Clock_m_s/counter<10>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 13 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 7 | 1 | 6 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 13 | 1 | 1 | 1 | 0 | 1 | 5
+INPUTS | 10 | Clock_m_s/counter<0>  | Clock_m_s/counter<1>  | Clock_m_s/counter<2>  | Clock_m_s/counter<3>  | Clock_m_s/counter<4>  | Clock_m_s/counter<5>  | Clock_m_s/counter<6>  | Clock_m_s/counter<7>  | Clock_m_s/counter<8>  | Clock_m_s/counter<9>
+INPUTMC | 10 | 0 | 7 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 13 | 0 | 12 | 0 | 5 | 1 | 0 | 0 | 2
+EQ | 5 | 
+   Clock_m_s/counter<10>.T := Clock_m_s/counter<0> & Clock_m_s/counter<1> & 
+	Clock_m_s/counter<2> & Clock_m_s/counter<3> & Clock_m_s/counter<4> & 
+	Clock_m_s/counter<5> & Clock_m_s/counter<6> & Clock_m_s/counter<7> & 
+	Clock_m_s/counter<8> & Clock_m_s/counter<9>;	// (1 pt, 10 inp)
+   Clock_m_s/counter<10>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 0 | 6 | Clock_m_s/counter<1>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 21 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 13 | 0 | 12 | 0 | 5 | 0 | 2 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 7 | 1 | 6 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 13 | 1 | 1 | 1 | 0 | 1 | 15 | 1 | 5
+INPUTS | 1 | Clock_m_s/counter<0>
+INPUTMC | 1 | 0 | 7
+EQ | 2 | 
+   Clock_m_s/counter<1>.T := Clock_m_s/counter<0>;	// (1 pt, 1 inp)
+   Clock_m_s/counter<1>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 0 | 4 | Clock_m_s/counter<2>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 20 | 0 | 1 | 0 | 0 | 0 | 13 | 0 | 12 | 0 | 5 | 0 | 2 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 7 | 1 | 6 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 13 | 1 | 1 | 1 | 0 | 1 | 15 | 1 | 5
+INPUTS | 2 | Clock_m_s/counter<0>  | Clock_m_s/counter<1>
+INPUTMC | 2 | 0 | 7 | 0 | 6
+EQ | 2 | 
+   Clock_m_s/counter<2>.T := Clock_m_s/counter<0> & Clock_m_s/counter<1>;	// (1 pt, 2 inp)
+   Clock_m_s/counter<2>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 0 | 1 | Clock_m_s/counter<3>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 19 | 0 | 0 | 0 | 13 | 0 | 12 | 0 | 5 | 0 | 2 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 7 | 1 | 6 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 13 | 1 | 1 | 1 | 0 | 1 | 15 | 1 | 5
+INPUTS | 3 | Clock_m_s/counter<0>  | Clock_m_s/counter<1>  | Clock_m_s/counter<2>
+INPUTMC | 3 | 0 | 7 | 0 | 6 | 0 | 4
+EQ | 3 | 
+   Clock_m_s/counter<3>.T := Clock_m_s/counter<0> & Clock_m_s/counter<1> & 
+	Clock_m_s/counter<2>;	// (1 pt, 3 inp)
+   Clock_m_s/counter<3>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 0 | 0 | Clock_m_s/counter<4>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 18 | 0 | 13 | 0 | 12 | 0 | 5 | 0 | 2 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 7 | 1 | 6 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 13 | 1 | 1 | 1 | 0 | 1 | 15 | 1 | 5
+INPUTS | 4 | Clock_m_s/counter<0>  | Clock_m_s/counter<1>  | Clock_m_s/counter<2>  | Clock_m_s/counter<3>
+INPUTMC | 4 | 0 | 7 | 0 | 6 | 0 | 4 | 0 | 1
+EQ | 3 | 
+   Clock_m_s/counter<4>.T := Clock_m_s/counter<0> & Clock_m_s/counter<1> & 
+	Clock_m_s/counter<2> & Clock_m_s/counter<3>;	// (1 pt, 4 inp)
+   Clock_m_s/counter<4>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 0 | 13 | Clock_m_s/counter<5>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 17 | 0 | 12 | 0 | 5 | 0 | 2 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 7 | 1 | 6 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 13 | 1 | 1 | 1 | 0 | 1 | 15 | 1 | 5
+INPUTS | 5 | Clock_m_s/counter<0>  | Clock_m_s/counter<1>  | Clock_m_s/counter<2>  | Clock_m_s/counter<3>  | Clock_m_s/counter<4>
+INPUTMC | 5 | 0 | 7 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0
+EQ | 3 | 
+   Clock_m_s/counter<5>.T := Clock_m_s/counter<0> & Clock_m_s/counter<1> & 
+	Clock_m_s/counter<2> & Clock_m_s/counter<3> & Clock_m_s/counter<4>;	// (1 pt, 5 inp)
+   Clock_m_s/counter<5>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 0 | 12 | Clock_m_s/counter<6>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 16 | 0 | 5 | 0 | 2 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 7 | 1 | 6 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 13 | 1 | 1 | 1 | 0 | 1 | 15 | 1 | 5
+INPUTS | 6 | Clock_m_s/counter<0>  | Clock_m_s/counter<1>  | Clock_m_s/counter<2>  | Clock_m_s/counter<3>  | Clock_m_s/counter<4>  | Clock_m_s/counter<5>
+INPUTMC | 6 | 0 | 7 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 13
+EQ | 4 | 
+   Clock_m_s/counter<6>.T := Clock_m_s/counter<0> & Clock_m_s/counter<1> & 
+	Clock_m_s/counter<2> & Clock_m_s/counter<3> & Clock_m_s/counter<4> & 
+	Clock_m_s/counter<5>;	// (1 pt, 6 inp)
+   Clock_m_s/counter<6>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 0 | 5 | Clock_m_s/counter<7>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 15 | 0 | 2 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 7 | 1 | 6 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 13 | 1 | 1 | 1 | 0 | 1 | 15 | 1 | 5
+INPUTS | 7 | Clock_m_s/counter<0>  | Clock_m_s/counter<1>  | Clock_m_s/counter<2>  | Clock_m_s/counter<3>  | Clock_m_s/counter<4>  | Clock_m_s/counter<5>  | Clock_m_s/counter<6>
+INPUTMC | 7 | 0 | 7 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 13 | 0 | 12
+EQ | 4 | 
+   Clock_m_s/counter<7>.T := Clock_m_s/counter<0> & Clock_m_s/counter<1> & 
+	Clock_m_s/counter<2> & Clock_m_s/counter<3> & Clock_m_s/counter<4> & 
+	Clock_m_s/counter<5> & Clock_m_s/counter<6>;	// (1 pt, 7 inp)
+   Clock_m_s/counter<7>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 1 | 0 | Clock_m_s/counter<8>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 15 | 0 | 2 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 7 | 1 | 6 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 13 | 1 | 1 | 1 | 0 | 1 | 15 | 1 | 5
+INPUTS | 22 | Clock_m_s/counter<0>  | Clock_m_s/counter<1>  | Clock_m_s/counter<2>  | Clock_m_s/counter<3>  | Clock_m_s/counter<4>  | Clock_m_s/counter<5>  | Clock_m_s/counter<6>  | Clock_m_s/counter<7>  | Clock_m_s/counter<10>  | Clock_m_s/counter<8>  | Clock_m_s/counter<11>  | Clock_m_s/counter<9>  | Clock_m_s/counter<12>  | Clock_m_s/counter<13>  | Clock_m_s/counter<14>  | Clock_m_s/counter<15>  | Clock_m_s/counter<16>  | Clock_m_s/counter<17>  | Clock_m_s/counter<18>  | Clock_m_s/counter<19>  | Clock_m_s/counter<20>  | Clock_m_s/counter<21>
+INPUTMC | 22 | 0 | 7 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 13 | 0 | 12 | 0 | 5 | 1 | 15 | 1 | 0 | 1 | 1 | 0 | 2 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 7 | 1 | 13 | 1 | 6 | 1 | 11 | 1 | 4 | 1 | 3 | 1 | 2
+EQ | 14 | 
+   !Clock_m_s/counter<8>.T := !Clock_m_s/counter<0>
+	# !Clock_m_s/counter<1>
+	# !Clock_m_s/counter<2>
+	# !Clock_m_s/counter<3>
+	# !Clock_m_s/counter<4>
+	# !Clock_m_s/counter<5>
+	# !Clock_m_s/counter<6>
+	# !Clock_m_s/counter<7>
+	# !Clock_m_s/counter<10> & !Clock_m_s/counter<8> & 
+	Clock_m_s/counter<11> & !Clock_m_s/counter<9> & !Clock_m_s/counter<12> & 
+	!Clock_m_s/counter<13> & !Clock_m_s/counter<14> & !Clock_m_s/counter<15> & 
+	Clock_m_s/counter<16> & !Clock_m_s/counter<17> & Clock_m_s/counter<18> & 
+	Clock_m_s/counter<19> & Clock_m_s/counter<20> & Clock_m_s/counter<21>;	// (9 pt, 22 inp)
+   Clock_m_s/counter<8>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 1 | 1 | Clock_m_s/counter<11>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 13 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 7 | 1 | 6 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 13 | 1 | 1 | 1 | 0 | 1 | 5
+INPUTS | 22 | Clock_m_s/counter<0>  | Clock_m_s/counter<10>  | Clock_m_s/counter<1>  | Clock_m_s/counter<2>  | Clock_m_s/counter<3>  | Clock_m_s/counter<4>  | Clock_m_s/counter<5>  | Clock_m_s/counter<6>  | Clock_m_s/counter<7>  | Clock_m_s/counter<8>  | Clock_m_s/counter<9>  | Clock_m_s/counter<11>  | Clock_m_s/counter<12>  | Clock_m_s/counter<13>  | Clock_m_s/counter<14>  | Clock_m_s/counter<15>  | Clock_m_s/counter<16>  | Clock_m_s/counter<17>  | Clock_m_s/counter<18>  | Clock_m_s/counter<19>  | Clock_m_s/counter<20>  | Clock_m_s/counter<21>
+INPUTMC | 22 | 0 | 7 | 1 | 15 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 13 | 0 | 12 | 0 | 5 | 1 | 0 | 0 | 2 | 1 | 1 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 7 | 1 | 13 | 1 | 6 | 1 | 11 | 1 | 4 | 1 | 3 | 1 | 2
+EQ | 13 | 
+   Clock_m_s/counter<11>.T := Clock_m_s/counter<0> & Clock_m_s/counter<10> & 
+	Clock_m_s/counter<1> & Clock_m_s/counter<2> & Clock_m_s/counter<3> & 
+	Clock_m_s/counter<4> & Clock_m_s/counter<5> & Clock_m_s/counter<6> & 
+	Clock_m_s/counter<7> & Clock_m_s/counter<8> & Clock_m_s/counter<9>
+	# Clock_m_s/counter<0> & !Clock_m_s/counter<10> & 
+	Clock_m_s/counter<1> & Clock_m_s/counter<2> & Clock_m_s/counter<3> & 
+	Clock_m_s/counter<4> & Clock_m_s/counter<5> & Clock_m_s/counter<6> & 
+	Clock_m_s/counter<7> & !Clock_m_s/counter<8> & Clock_m_s/counter<11> & 
+	!Clock_m_s/counter<9> & !Clock_m_s/counter<12> & !Clock_m_s/counter<13> & 
+	!Clock_m_s/counter<14> & !Clock_m_s/counter<15> & Clock_m_s/counter<16> & 
+	!Clock_m_s/counter<17> & Clock_m_s/counter<18> & Clock_m_s/counter<19> & 
+	Clock_m_s/counter<20> & Clock_m_s/counter<21>;	// (2 pt, 22 inp)
+   Clock_m_s/counter<11>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 0 | 2 | Clock_m_s/counter<9>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 14 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 7 | 1 | 6 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 13 | 1 | 1 | 1 | 0 | 1 | 15 | 1 | 5
+INPUTS | 9 | Clock_m_s/counter<0>  | Clock_m_s/counter<1>  | Clock_m_s/counter<2>  | Clock_m_s/counter<3>  | Clock_m_s/counter<4>  | Clock_m_s/counter<5>  | Clock_m_s/counter<6>  | Clock_m_s/counter<7>  | Clock_m_s/counter<8>
+INPUTMC | 9 | 0 | 7 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 13 | 0 | 12 | 0 | 5 | 1 | 0
+EQ | 5 | 
+   Clock_m_s/counter<9>.T := Clock_m_s/counter<0> & Clock_m_s/counter<1> & 
+	Clock_m_s/counter<2> & Clock_m_s/counter<3> & Clock_m_s/counter<4> & 
+	Clock_m_s/counter<5> & Clock_m_s/counter<6> & Clock_m_s/counter<7> & 
+	Clock_m_s/counter<8>;	// (1 pt, 9 inp)
+   Clock_m_s/counter<9>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 1 | 10 | Clock_m_s/counter<12>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 12 | 1 | 9 | 1 | 8 | 1 | 7 | 1 | 6 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 13 | 1 | 1 | 1 | 0 | 1 | 5
+INPUTS | 12 | Clock_m_s/counter<0>  | Clock_m_s/counter<10>  | Clock_m_s/counter<1>  | Clock_m_s/counter<2>  | Clock_m_s/counter<3>  | Clock_m_s/counter<4>  | Clock_m_s/counter<5>  | Clock_m_s/counter<6>  | Clock_m_s/counter<7>  | Clock_m_s/counter<8>  | Clock_m_s/counter<11>  | Clock_m_s/counter<9>
+INPUTMC | 12 | 0 | 7 | 1 | 15 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 13 | 0 | 12 | 0 | 5 | 1 | 0 | 1 | 1 | 0 | 2
+EQ | 6 | 
+   Clock_m_s/counter<12>.T := Clock_m_s/counter<0> & Clock_m_s/counter<10> & 
+	Clock_m_s/counter<1> & Clock_m_s/counter<2> & Clock_m_s/counter<3> & 
+	Clock_m_s/counter<4> & Clock_m_s/counter<5> & Clock_m_s/counter<6> & 
+	Clock_m_s/counter<7> & Clock_m_s/counter<8> & Clock_m_s/counter<11> & 
+	Clock_m_s/counter<9>;	// (1 pt, 12 inp)
+   Clock_m_s/counter<12>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 1 | 9 | Clock_m_s/counter<13>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 11 | 1 | 8 | 1 | 7 | 1 | 6 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 13 | 1 | 1 | 1 | 0 | 1 | 5
+INPUTS | 13 | Clock_m_s/counter<0>  | Clock_m_s/counter<10>  | Clock_m_s/counter<1>  | Clock_m_s/counter<2>  | Clock_m_s/counter<3>  | Clock_m_s/counter<4>  | Clock_m_s/counter<5>  | Clock_m_s/counter<6>  | Clock_m_s/counter<7>  | Clock_m_s/counter<8>  | Clock_m_s/counter<11>  | Clock_m_s/counter<9>  | Clock_m_s/counter<12>
+INPUTMC | 13 | 0 | 7 | 1 | 15 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 13 | 0 | 12 | 0 | 5 | 1 | 0 | 1 | 1 | 0 | 2 | 1 | 10
+EQ | 6 | 
+   Clock_m_s/counter<13>.T := Clock_m_s/counter<0> & Clock_m_s/counter<10> & 
+	Clock_m_s/counter<1> & Clock_m_s/counter<2> & Clock_m_s/counter<3> & 
+	Clock_m_s/counter<4> & Clock_m_s/counter<5> & Clock_m_s/counter<6> & 
+	Clock_m_s/counter<7> & Clock_m_s/counter<8> & Clock_m_s/counter<11> & 
+	Clock_m_s/counter<9> & Clock_m_s/counter<12>;	// (1 pt, 13 inp)
+   Clock_m_s/counter<13>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 1 | 8 | Clock_m_s/counter<14>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 10 | 1 | 7 | 1 | 6 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 13 | 1 | 1 | 1 | 0 | 1 | 5
+INPUTS | 14 | Clock_m_s/counter<0>  | Clock_m_s/counter<10>  | Clock_m_s/counter<1>  | Clock_m_s/counter<2>  | Clock_m_s/counter<3>  | Clock_m_s/counter<4>  | Clock_m_s/counter<5>  | Clock_m_s/counter<6>  | Clock_m_s/counter<7>  | Clock_m_s/counter<8>  | Clock_m_s/counter<11>  | Clock_m_s/counter<9>  | Clock_m_s/counter<12>  | Clock_m_s/counter<13>
+INPUTMC | 14 | 0 | 7 | 1 | 15 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 13 | 0 | 12 | 0 | 5 | 1 | 0 | 1 | 1 | 0 | 2 | 1 | 10 | 1 | 9
+EQ | 6 | 
+   Clock_m_s/counter<14>.T := Clock_m_s/counter<0> & Clock_m_s/counter<10> & 
+	Clock_m_s/counter<1> & Clock_m_s/counter<2> & Clock_m_s/counter<3> & 
+	Clock_m_s/counter<4> & Clock_m_s/counter<5> & Clock_m_s/counter<6> & 
+	Clock_m_s/counter<7> & Clock_m_s/counter<8> & Clock_m_s/counter<11> & 
+	Clock_m_s/counter<9> & Clock_m_s/counter<12> & Clock_m_s/counter<13>;	// (1 pt, 14 inp)
+   Clock_m_s/counter<14>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 1 | 7 | Clock_m_s/counter<15>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 9 | 1 | 6 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 13 | 1 | 1 | 1 | 0 | 1 | 5
+INPUTS | 15 | Clock_m_s/counter<0>  | Clock_m_s/counter<10>  | Clock_m_s/counter<1>  | Clock_m_s/counter<2>  | Clock_m_s/counter<3>  | Clock_m_s/counter<4>  | Clock_m_s/counter<5>  | Clock_m_s/counter<6>  | Clock_m_s/counter<7>  | Clock_m_s/counter<8>  | Clock_m_s/counter<11>  | Clock_m_s/counter<9>  | Clock_m_s/counter<12>  | Clock_m_s/counter<13>  | Clock_m_s/counter<14>
+INPUTMC | 15 | 0 | 7 | 1 | 15 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 13 | 0 | 12 | 0 | 5 | 1 | 0 | 1 | 1 | 0 | 2 | 1 | 10 | 1 | 9 | 1 | 8
+EQ | 7 | 
+   Clock_m_s/counter<15>.T := Clock_m_s/counter<0> & Clock_m_s/counter<10> & 
+	Clock_m_s/counter<1> & Clock_m_s/counter<2> & Clock_m_s/counter<3> & 
+	Clock_m_s/counter<4> & Clock_m_s/counter<5> & Clock_m_s/counter<6> & 
+	Clock_m_s/counter<7> & Clock_m_s/counter<8> & Clock_m_s/counter<11> & 
+	Clock_m_s/counter<9> & Clock_m_s/counter<12> & Clock_m_s/counter<13> & 
+	Clock_m_s/counter<14>;	// (1 pt, 15 inp)
+   Clock_m_s/counter<15>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 1 | 13 | Clock_m_s/counter<16>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 9 | 1 | 6 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 13 | 1 | 1 | 1 | 0 | 1 | 5
+INPUTS | 22 | Clock_m_s/counter<0>  | Clock_m_s/counter<10>  | Clock_m_s/counter<1>  | Clock_m_s/counter<2>  | Clock_m_s/counter<3>  | Clock_m_s/counter<4>  | Clock_m_s/counter<5>  | Clock_m_s/counter<6>  | Clock_m_s/counter<7>  | Clock_m_s/counter<8>  | Clock_m_s/counter<11>  | Clock_m_s/counter<9>  | Clock_m_s/counter<12>  | Clock_m_s/counter<13>  | Clock_m_s/counter<14>  | Clock_m_s/counter<15>  | Clock_m_s/counter<16>  | Clock_m_s/counter<17>  | Clock_m_s/counter<18>  | Clock_m_s/counter<19>  | Clock_m_s/counter<20>  | Clock_m_s/counter<21>
+INPUTMC | 22 | 0 | 7 | 1 | 15 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 13 | 0 | 12 | 0 | 5 | 1 | 0 | 1 | 1 | 0 | 2 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 7 | 1 | 13 | 1 | 6 | 1 | 11 | 1 | 4 | 1 | 3 | 1 | 2
+EQ | 15 | 
+   Clock_m_s/counter<16>.T := Clock_m_s/counter<0> & Clock_m_s/counter<10> & 
+	Clock_m_s/counter<1> & Clock_m_s/counter<2> & Clock_m_s/counter<3> & 
+	Clock_m_s/counter<4> & Clock_m_s/counter<5> & Clock_m_s/counter<6> & 
+	Clock_m_s/counter<7> & Clock_m_s/counter<8> & Clock_m_s/counter<11> & 
+	Clock_m_s/counter<9> & Clock_m_s/counter<12> & Clock_m_s/counter<13> & 
+	Clock_m_s/counter<14> & Clock_m_s/counter<15>
+	# Clock_m_s/counter<0> & !Clock_m_s/counter<10> & 
+	Clock_m_s/counter<1> & Clock_m_s/counter<2> & Clock_m_s/counter<3> & 
+	Clock_m_s/counter<4> & Clock_m_s/counter<5> & Clock_m_s/counter<6> & 
+	Clock_m_s/counter<7> & !Clock_m_s/counter<8> & Clock_m_s/counter<11> & 
+	!Clock_m_s/counter<9> & !Clock_m_s/counter<12> & !Clock_m_s/counter<13> & 
+	!Clock_m_s/counter<14> & !Clock_m_s/counter<15> & Clock_m_s/counter<16> & 
+	!Clock_m_s/counter<17> & Clock_m_s/counter<18> & Clock_m_s/counter<19> & 
+	Clock_m_s/counter<20> & Clock_m_s/counter<21>;	// (2 pt, 22 inp)
+   Clock_m_s/counter<16>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 1 | 6 | Clock_m_s/counter<17>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 8 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 13 | 1 | 1 | 1 | 0 | 1 | 5
+INPUTS | 17 | Clock_m_s/counter<0>  | Clock_m_s/counter<10>  | Clock_m_s/counter<1>  | Clock_m_s/counter<2>  | Clock_m_s/counter<3>  | Clock_m_s/counter<4>  | Clock_m_s/counter<5>  | Clock_m_s/counter<6>  | Clock_m_s/counter<7>  | Clock_m_s/counter<8>  | Clock_m_s/counter<11>  | Clock_m_s/counter<9>  | Clock_m_s/counter<12>  | Clock_m_s/counter<13>  | Clock_m_s/counter<14>  | Clock_m_s/counter<15>  | Clock_m_s/counter<16>
+INPUTMC | 17 | 0 | 7 | 1 | 15 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 13 | 0 | 12 | 0 | 5 | 1 | 0 | 1 | 1 | 0 | 2 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 7 | 1 | 13
+EQ | 7 | 
+   Clock_m_s/counter<17>.T := Clock_m_s/counter<0> & Clock_m_s/counter<10> & 
+	Clock_m_s/counter<1> & Clock_m_s/counter<2> & Clock_m_s/counter<3> & 
+	Clock_m_s/counter<4> & Clock_m_s/counter<5> & Clock_m_s/counter<6> & 
+	Clock_m_s/counter<7> & Clock_m_s/counter<8> & Clock_m_s/counter<11> & 
+	Clock_m_s/counter<9> & Clock_m_s/counter<12> & Clock_m_s/counter<13> & 
+	Clock_m_s/counter<14> & Clock_m_s/counter<15> & Clock_m_s/counter<16>;	// (1 pt, 17 inp)
+   Clock_m_s/counter<17>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 1 | 11 | Clock_m_s/counter<18>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 8 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 13 | 1 | 1 | 1 | 0 | 1 | 5
+INPUTS | 22 | Clock_m_s/counter<0>  | Clock_m_s/counter<10>  | Clock_m_s/counter<1>  | Clock_m_s/counter<2>  | Clock_m_s/counter<3>  | Clock_m_s/counter<4>  | Clock_m_s/counter<5>  | Clock_m_s/counter<6>  | Clock_m_s/counter<7>  | Clock_m_s/counter<8>  | Clock_m_s/counter<11>  | Clock_m_s/counter<9>  | Clock_m_s/counter<12>  | Clock_m_s/counter<13>  | Clock_m_s/counter<14>  | Clock_m_s/counter<15>  | Clock_m_s/counter<16>  | Clock_m_s/counter<17>  | Clock_m_s/counter<18>  | Clock_m_s/counter<19>  | Clock_m_s/counter<20>  | Clock_m_s/counter<21>
+INPUTMC | 22 | 0 | 7 | 1 | 15 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 13 | 0 | 12 | 0 | 5 | 1 | 0 | 1 | 1 | 0 | 2 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 7 | 1 | 13 | 1 | 6 | 1 | 11 | 1 | 4 | 1 | 3 | 1 | 2
+EQ | 16 | 
+   Clock_m_s/counter<18>.T := Clock_m_s/counter<0> & Clock_m_s/counter<10> & 
+	Clock_m_s/counter<1> & Clock_m_s/counter<2> & Clock_m_s/counter<3> & 
+	Clock_m_s/counter<4> & Clock_m_s/counter<5> & Clock_m_s/counter<6> & 
+	Clock_m_s/counter<7> & Clock_m_s/counter<8> & Clock_m_s/counter<11> & 
+	Clock_m_s/counter<9> & Clock_m_s/counter<12> & Clock_m_s/counter<13> & 
+	Clock_m_s/counter<14> & Clock_m_s/counter<15> & Clock_m_s/counter<16> & 
+	Clock_m_s/counter<17>
+	# Clock_m_s/counter<0> & !Clock_m_s/counter<10> & 
+	Clock_m_s/counter<1> & Clock_m_s/counter<2> & Clock_m_s/counter<3> & 
+	Clock_m_s/counter<4> & Clock_m_s/counter<5> & Clock_m_s/counter<6> & 
+	Clock_m_s/counter<7> & !Clock_m_s/counter<8> & Clock_m_s/counter<11> & 
+	!Clock_m_s/counter<9> & !Clock_m_s/counter<12> & !Clock_m_s/counter<13> & 
+	!Clock_m_s/counter<14> & !Clock_m_s/counter<15> & Clock_m_s/counter<16> & 
+	!Clock_m_s/counter<17> & Clock_m_s/counter<18> & Clock_m_s/counter<19> & 
+	Clock_m_s/counter<20> & Clock_m_s/counter<21>;	// (2 pt, 22 inp)
+   Clock_m_s/counter<18>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 1 | 4 | Clock_m_s/counter<19>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 8 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 13 | 1 | 1 | 1 | 0 | 1 | 5
+INPUTS | 22 | Clock_m_s/counter<0>  | Clock_m_s/counter<10>  | Clock_m_s/counter<1>  | Clock_m_s/counter<2>  | Clock_m_s/counter<3>  | Clock_m_s/counter<4>  | Clock_m_s/counter<5>  | Clock_m_s/counter<6>  | Clock_m_s/counter<7>  | Clock_m_s/counter<8>  | Clock_m_s/counter<11>  | Clock_m_s/counter<9>  | Clock_m_s/counter<12>  | Clock_m_s/counter<13>  | Clock_m_s/counter<14>  | Clock_m_s/counter<15>  | Clock_m_s/counter<16>  | Clock_m_s/counter<17>  | Clock_m_s/counter<18>  | Clock_m_s/counter<19>  | Clock_m_s/counter<20>  | Clock_m_s/counter<21>
+INPUTMC | 22 | 0 | 7 | 1 | 15 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 13 | 0 | 12 | 0 | 5 | 1 | 0 | 1 | 1 | 0 | 2 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 7 | 1 | 13 | 1 | 6 | 1 | 11 | 1 | 4 | 1 | 3 | 1 | 2
+EQ | 16 | 
+   Clock_m_s/counter<19>.T := Clock_m_s/counter<0> & Clock_m_s/counter<10> & 
+	Clock_m_s/counter<1> & Clock_m_s/counter<2> & Clock_m_s/counter<3> & 
+	Clock_m_s/counter<4> & Clock_m_s/counter<5> & Clock_m_s/counter<6> & 
+	Clock_m_s/counter<7> & Clock_m_s/counter<8> & Clock_m_s/counter<11> & 
+	Clock_m_s/counter<9> & Clock_m_s/counter<12> & Clock_m_s/counter<13> & 
+	Clock_m_s/counter<14> & Clock_m_s/counter<15> & Clock_m_s/counter<16> & 
+	Clock_m_s/counter<17> & Clock_m_s/counter<18>
+	# Clock_m_s/counter<0> & !Clock_m_s/counter<10> & 
+	Clock_m_s/counter<1> & Clock_m_s/counter<2> & Clock_m_s/counter<3> & 
+	Clock_m_s/counter<4> & Clock_m_s/counter<5> & Clock_m_s/counter<6> & 
+	Clock_m_s/counter<7> & !Clock_m_s/counter<8> & Clock_m_s/counter<11> & 
+	!Clock_m_s/counter<9> & !Clock_m_s/counter<12> & !Clock_m_s/counter<13> & 
+	!Clock_m_s/counter<14> & !Clock_m_s/counter<15> & Clock_m_s/counter<16> & 
+	!Clock_m_s/counter<17> & Clock_m_s/counter<18> & Clock_m_s/counter<19> & 
+	Clock_m_s/counter<20> & Clock_m_s/counter<21>;	// (2 pt, 22 inp)
+   Clock_m_s/counter<19>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 1 | 3 | Clock_m_s/counter<20>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 8 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 13 | 1 | 1 | 1 | 0 | 1 | 5
+INPUTS | 22 | Clock_m_s/counter<0>  | Clock_m_s/counter<10>  | Clock_m_s/counter<1>  | Clock_m_s/counter<2>  | Clock_m_s/counter<3>  | Clock_m_s/counter<4>  | Clock_m_s/counter<5>  | Clock_m_s/counter<6>  | Clock_m_s/counter<7>  | Clock_m_s/counter<8>  | Clock_m_s/counter<11>  | Clock_m_s/counter<9>  | Clock_m_s/counter<12>  | Clock_m_s/counter<13>  | Clock_m_s/counter<14>  | Clock_m_s/counter<15>  | Clock_m_s/counter<16>  | Clock_m_s/counter<17>  | Clock_m_s/counter<18>  | Clock_m_s/counter<19>  | Clock_m_s/counter<20>  | Clock_m_s/counter<21>
+INPUTMC | 22 | 0 | 7 | 1 | 15 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 13 | 0 | 12 | 0 | 5 | 1 | 0 | 1 | 1 | 0 | 2 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 7 | 1 | 13 | 1 | 6 | 1 | 11 | 1 | 4 | 1 | 3 | 1 | 2
+EQ | 16 | 
+   Clock_m_s/counter<20>.T := Clock_m_s/counter<0> & Clock_m_s/counter<10> & 
+	Clock_m_s/counter<1> & Clock_m_s/counter<2> & Clock_m_s/counter<3> & 
+	Clock_m_s/counter<4> & Clock_m_s/counter<5> & Clock_m_s/counter<6> & 
+	Clock_m_s/counter<7> & Clock_m_s/counter<8> & Clock_m_s/counter<11> & 
+	Clock_m_s/counter<9> & Clock_m_s/counter<12> & Clock_m_s/counter<13> & 
+	Clock_m_s/counter<14> & Clock_m_s/counter<15> & Clock_m_s/counter<16> & 
+	Clock_m_s/counter<17> & Clock_m_s/counter<18> & Clock_m_s/counter<19>
+	# Clock_m_s/counter<0> & !Clock_m_s/counter<10> & 
+	Clock_m_s/counter<1> & Clock_m_s/counter<2> & Clock_m_s/counter<3> & 
+	Clock_m_s/counter<4> & Clock_m_s/counter<5> & Clock_m_s/counter<6> & 
+	Clock_m_s/counter<7> & !Clock_m_s/counter<8> & Clock_m_s/counter<11> & 
+	!Clock_m_s/counter<9> & !Clock_m_s/counter<12> & !Clock_m_s/counter<13> & 
+	!Clock_m_s/counter<14> & !Clock_m_s/counter<15> & Clock_m_s/counter<16> & 
+	!Clock_m_s/counter<17> & Clock_m_s/counter<18> & Clock_m_s/counter<19> & 
+	Clock_m_s/counter<20> & Clock_m_s/counter<21>;	// (2 pt, 22 inp)
+   Clock_m_s/counter<20>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 1 | 2 | Clock_m_s/counter<21>_MC
+ATTRIBUTES | 2151711488 | 0
+OUTPUTMC | 8 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 13 | 1 | 1 | 1 | 0 | 1 | 5
+INPUTS | 22 | Clock_m_s/counter<0>  | Clock_m_s/counter<10>  | Clock_m_s/counter<1>  | Clock_m_s/counter<2>  | Clock_m_s/counter<3>  | Clock_m_s/counter<4>  | Clock_m_s/counter<5>  | Clock_m_s/counter<6>  | Clock_m_s/counter<7>  | Clock_m_s/counter<8>  | Clock_m_s/counter<11>  | Clock_m_s/counter<9>  | Clock_m_s/counter<12>  | Clock_m_s/counter<13>  | Clock_m_s/counter<14>  | Clock_m_s/counter<15>  | Clock_m_s/counter<16>  | Clock_m_s/counter<17>  | Clock_m_s/counter<18>  | Clock_m_s/counter<19>  | Clock_m_s/counter<20>  | Clock_m_s/counter<21>
+INPUTMC | 22 | 0 | 7 | 1 | 15 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 13 | 0 | 12 | 0 | 5 | 1 | 0 | 1 | 1 | 0 | 2 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 7 | 1 | 13 | 1 | 6 | 1 | 11 | 1 | 4 | 1 | 3 | 1 | 2
+EQ | 17 | 
+   Clock_m_s/counter<21>.T := Clock_m_s/counter<0> & Clock_m_s/counter<10> & 
+	Clock_m_s/counter<1> & Clock_m_s/counter<2> & Clock_m_s/counter<3> & 
+	Clock_m_s/counter<4> & Clock_m_s/counter<5> & Clock_m_s/counter<6> & 
+	Clock_m_s/counter<7> & Clock_m_s/counter<8> & Clock_m_s/counter<11> & 
+	Clock_m_s/counter<9> & Clock_m_s/counter<12> & Clock_m_s/counter<13> & 
+	Clock_m_s/counter<14> & Clock_m_s/counter<15> & Clock_m_s/counter<16> & 
+	Clock_m_s/counter<17> & Clock_m_s/counter<18> & Clock_m_s/counter<19> & 
+	Clock_m_s/counter<20>
+	# Clock_m_s/counter<0> & !Clock_m_s/counter<10> & 
+	Clock_m_s/counter<1> & Clock_m_s/counter<2> & Clock_m_s/counter<3> & 
+	Clock_m_s/counter<4> & Clock_m_s/counter<5> & Clock_m_s/counter<6> & 
+	Clock_m_s/counter<7> & !Clock_m_s/counter<8> & Clock_m_s/counter<11> & 
+	!Clock_m_s/counter<9> & !Clock_m_s/counter<12> & !Clock_m_s/counter<13> & 
+	!Clock_m_s/counter<14> & !Clock_m_s/counter<15> & Clock_m_s/counter<16> & 
+	!Clock_m_s/counter<17> & Clock_m_s/counter<18> & Clock_m_s/counter<19> & 
+	Clock_m_s/counter<20> & Clock_m_s/counter<21>;	// (2 pt, 22 inp)
+   Clock_m_s/counter<21>.CLK  =  clk;	// GCK	(0 pt, 0 inp)
+GLOBALS | 1 | 2 | clk
+
+MACROCELL | 1 | 14 | p_gr<1>_MC
+ATTRIBUTES | 135004930 | 0
+INPUTS | 4 | cst<3>  | cst<0>  | cst<1>  | cst<2>
+INPUTMC | 4 | 0 | 10 | 0 | 9 | 0 | 15 | 0 | 14
+LCT | 1 | 2 | Internal_Name
+EQ | 4 | 
+   p_gr<1>.D = cst<3> & !cst<0>
+	# cst<1> & !cst<0> & !cst<2>
+	# !cst<3> & !cst<1> & cst<0> & cst<2>;	// (3 pt, 4 inp)
+    p_gr<1>.LH = !(N_PZ_142);	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 2 | 0 | s_gyr<0>_MC
+ATTRIBUTES | 135004930 | 0
+INPUTS | 4 | cst<3>  | cst<0>  | cst<2>  | cst<1>
+INPUTMC | 4 | 0 | 10 | 0 | 9 | 0 | 14 | 0 | 15
+LCT | 1 | 2 | Internal_Name
+EQ | 3 | 
+   !s_gyr<0>.D = !cst<3> & cst<0> & !cst<2>
+	# cst<1> & cst<0> & !cst<2>;	// (2 pt, 4 inp)
+    s_gyr<0>.LH = !(N_PZ_142);	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 0 | 11 | s_gyr<1>_MC
+ATTRIBUTES | 787234 | 0
+INPUTS | 5 | cst<3>  | cst<1>  | cst<0>  | cst<2>  | N_PZ_142
+INPUTMC | 5 | 0 | 10 | 0 | 15 | 0 | 9 | 0 | 14 | 0 | 8
+EQ | 2 | 
+   s_gyr<1>.D = !cst<3> & cst<1> & cst<0> & !cst<2>;	// (1 pt, 4 inp)
+    s_gyr<1>.LH = !(N_PZ_142);	// PTC	(1 pt, 1 inp)
+
+MACROCELL | 0 | 3 | s_gyr<2>_MC
+ATTRIBUTES | 787234 | 0
+INPUTS | 5 | cst<3>  | cst<1>  | cst<0>  | cst<2>  | N_PZ_142
+INPUTMC | 5 | 0 | 10 | 0 | 15 | 0 | 9 | 0 | 14 | 0 | 8
+EQ | 3 | 
+   s_gyr<2>.D = cst<3> & cst<1> & cst<0> & !cst<2>
+	# !cst<3> & !cst<1> & cst<0> & !cst<2>;	// (2 pt, 4 inp)
+    s_gyr<2>.LH = !(N_PZ_142);	// PTC	(1 pt, 1 inp)
+
+MACROCELL | 8 | 5 | w_gyr<0>_MC
+ATTRIBUTES | 135004930 | 0
+INPUTS | 4 | cst<3>  | cst<1>  | cst<0>  | cst<2>
+INPUTMC | 4 | 0 | 10 | 0 | 15 | 0 | 9 | 0 | 14
+LCT | 1 | 2 | Internal_Name
+EQ | 3 | 
+   !w_gyr<0>.D = !cst<3> & !cst<1> & !cst<0>
+	# cst<3> & cst<1> & cst<0> & cst<2>;	// (2 pt, 4 inp)
+    w_gyr<0>.LH = !(N_PZ_142);	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 8 | 12 | w_gyr<1>_MC
+ATTRIBUTES | 135004930 | 0
+INPUTS | 4 | cst<3>  | cst<1>  | cst<0>  | cst<2>
+INPUTMC | 4 | 0 | 10 | 0 | 15 | 0 | 9 | 0 | 14
+LCT | 1 | 2 | Internal_Name
+EQ | 2 | 
+   w_gyr<1>.D = !cst<3> & !cst<1> & !cst<0> & !cst<2>;	// (1 pt, 4 inp)
+    w_gyr<1>.LH = !(N_PZ_142);	// CTC	(1 pt, 1 inp)
+
+MACROCELL | 8 | 14 | w_gyr<2>_MC
+ATTRIBUTES | 135004930 | 0
+INPUTS | 4 | cst<3>  | cst<1>  | cst<0>  | cst<2>
+INPUTMC | 4 | 0 | 10 | 0 | 15 | 0 | 9 | 0 | 14
+LCT | 1 | 2 | Internal_Name
+EQ | 3 | 
+   w_gyr<2>.D = cst<3> & cst<1> & cst<0> & cst<2>
+	# !cst<3> & !cst<1> & !cst<0> & cst<2>;	// (2 pt, 4 inp)
+    w_gyr<2>.LH = !(N_PZ_142);	// CTC	(1 pt, 1 inp)
+
+PIN | clk | 16384 | 16 | LVCMOS18 | 59 | 23 | 0 | 7 | 0 | 6 | 0 | 4 | 0 | 1 | 0 | 0 | 0 | 13 | 0 | 12 | 0 | 5 | 0 | 2 | 1 | 10 | 1 | 9 | 1 | 8 | 1 | 7 | 1 | 6 | 1 | 2 | 1 | 3 | 1 | 4 | 1 | 11 | 1 | 13 | 1 | 1 | 1 | 0 | 1 | 15 | 1 | 5
+PIN | p | 64 | 16 | LVCMOS18 | 160 | 2 | 0 | 8 | 0 | 9
+PIN | reset | 64 | 16 | LVCMOS18 | 156 | 4 | 0 | 14 | 0 | 9 | 0 | 15 | 0 | 10
+PIN | s | 64 | 16 | LVCMOS18 | 190 | 5 | 0 | 8 | 0 | 14 | 0 | 9 | 0 | 15 | 0 | 10
+PIN | w | 64 | 16 | LVCMOS18 | 62 | 3 | 0 | 8 | 0 | 14 | 0 | 10
+PIN | p_gr<0> | 536871040 | 0 | LVCMOS18 | 8
+PIN | p_gr<1> | 536871040 | 0 | LVCMOS18 | 12
+PIN | s_gyr<0> | 536871040 | 0 | LVCMOS18 | 208
+PIN | s_gyr<1> | 536871040 | 0 | LVCMOS18 | 213
+PIN | s_gyr<2> | 536871040 | 0 | LVCMOS18 | 217
+PIN | w_gyr<0> | 536871040 | 0 | LVCMOS18 | 173
+PIN | w_gyr<1> | 536871040 | 0 | LVCMOS18 | 176
+PIN | w_gyr<2> | 536871040 | 0 | LVCMOS18 | 178

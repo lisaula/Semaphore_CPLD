@@ -1,0 +1,50 @@
+Pin Freeze File:  version P.20131013
+
+2C256144 XC2C256-6-TQ144
+clk S:PIN38
+p S:PIN104
+reset S:PIN102
+s S:PIN124
+w S:PIN39
+p_gr<0> S:PIN7
+p_gr<1> S:PIN10
+s_gyr<0> S:PIN136
+s_gyr<1> S:PIN139
+s_gyr<2> S:PIN142
+w_gyr<0> S:PIN115
+w_gyr<1> S:PIN117
+w_gyr<2> S:PIN119
+
+
+;The remaining section of the .gyd file is for documentation purposes only.
+;It shows where your internal equations were placed in the last successful fit.
+
+PARTITION FB1_1 Clock_m_s/counter<4> Clock_m_s/counter<3> Clock_m_s/counter<9> s_gyr<2>
+		 Clock_m_s/counter<2> Clock_m_s/counter<7> Clock_m_s/counter<1> Clock_m_s/counter<0>
+		 N_PZ_142 cst<0> cst<3> s_gyr<1>
+		 Clock_m_s/counter<6> Clock_m_s/counter<5> cst<2> cst<1>
+		
+PARTITION FB2_1 Clock_m_s/counter<8> Clock_m_s/counter<11> Clock_m_s/counter<21> Clock_m_s/counter<20>
+		 Clock_m_s/counter<19> Clk_m_s Clock_m_s/counter<17> Clock_m_s/counter<15>
+		 Clock_m_s/counter<14> Clock_m_s/counter<13> Clock_m_s/counter<12> Clock_m_s/counter<18>
+		 p_gr<0> Clock_m_s/counter<16> p_gr<1> Clock_m_s/counter<10>
+		
+PARTITION FB3_1 s_gyr<0>
+
+
+
+
+
+
+PARTITION FB9_6 w_gyr<0>
+PARTITION FB9_13 w_gyr<1>
+PARTITION FB9_15 w_gyr<2>
+
+
+
+
+
+
+
+
+

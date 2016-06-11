@@ -1,0 +1,24 @@
+#Switches Input West and South  sensors
+NET "w" LOC="P39"; //West sensor
+NET "s" LOC="P124"; //South sensor
+
+//J1 Outputs Pedistrian's Semaphore
+NET "p_gr[1]" LOC="P10";	# J1-IO1 //Green light
+NET "p_gr[0]" LOC="P7";	# J1-IO2 //Red light
+
+//J2 Outputs South' semaphore
+NET "s_gyr[2]" LOC="P142";	# J2-IO1 //Green light
+NET "s_gyr[1]" LOC="P139";	# J2-IO2 //Yellow light
+NET "s_gyr[0]" LOC="P136";	# J2-IO3 //Red light
+
+//J3 Outputs West' semaphore
+NET "w_gyr[2]" LOC="P119";	# J3-IO1 //Green light
+NET "w_gyr[1]" LOC="P117";	# J3-IO2 //Yellow light
+NET "w_gyr[0]" LOC="P115";	# J3-IO3 //Red light
+
+//J4 Sensor input Pedestrian and Resent input
+NET "p" LOC="P104";	# J4-IO1 //Pedestrian's sensor
+NET "reset" LOC="P102";	# J4-IO2 //Reset button
+
+//CLK
+NET "clk" LOC="P38"; 
